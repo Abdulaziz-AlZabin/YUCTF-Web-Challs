@@ -1,0 +1,83 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Glow effect -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Glitch animation -->
+    <style>
+      @keyframes glitch {
+        0% { transform: translate(0, 0); }
+        20% { transform: translate(-1px, 0); }
+        40% { transform: translate(1px, -1px); }
+        60% { transform: translate(-1px, 1px); }
+        80% { transform: translate(1px, 0); }
+        100% { transform: translate(0, 0); }
+      }
+      .glitch {
+        animation: glitch 1s infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="black" />
+
+  <!-- Dim binary background -->
+  <text x="40" y="80" font-size="12" fill="#00ff00" font-family="monospace" opacity="0.05">
+    01011001 01010101 01000011 01010100 01000110 01111011 00110011 01101100 01101001 00110000 01110100 01011111
+    01110111 00110100 01110011 01011111 00110100 01101100 01110111 00110100 01111001 01110011 01011111 01110010
+    01101001 01100111 01101000 01110100 01111101
+  </text>
+
+
+  <!-- MR. ROBOT Logo -->
+  <text x="50%" y="100" font-size="60" text-anchor="middle" fill="red"
+        font-family="monospace" filter="url(#glow)" class="glitch">
+    MR. ROBOT
+  </text>
+
+  <!-- Tagline -->
+  <text x="50%" y="140" font-size="20" text-anchor="middle" fill="#CCCCCC" font-family="monospace">
+    YUCTF Hack The System
+  </text>
+
+  <!-- Terminal box -->
+  <rect x="100" y="180" width="600" height="300" fill="none" stroke="#00FF00" stroke-width="1" opacity="0.4" />
+
+  <!-- ASCII mask -->
+  <text x="110" y="210" font-size="10" font-family="monospace" fill="#888888" opacity="0.3">
+    ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+  </text>
+  <text x="110" y="225" font-size="10" font-family="monospace" fill="#888888" opacity="0.3">
+    ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+  </text>
+
+  <!-- Glitch bars -->
+  <rect x="0" y="270" width="800" height="2" fill="red" opacity="0.2" />
+  <rect x="0" y="320" width="800" height="3" fill="#00FF00" opacity="0.1" />
+  <rect x="0" y="420" width="800" height="2" fill="white" opacity="0.05" />
+  <rect x="0" y="480" width="800" height="1" fill="#FF0000" opacity="0.1" />
+
+  <!-- Scanlines -->
+  <g stroke="#00FF00" stroke-width="0.5" opacity="0.03">
+    <!-- Create horizontal scanlines -->
+    <line x1="0" y1="0" x2="800" y2="0"/>
+    <line x1="0" y1="10" x2="800" y2="10"/>
+    <line x1="0" y1="20" x2="800" y2="20"/>
+    <line x1="0" y1="30" x2="800" y2="30"/>
+    <line x1="0" y1="40" x2="800" y2="40"/>
+    <!-- Repeat every 10px -->
+    <line x1="0" y1="50" x2="800" y2="50"/>
+    <line x1="0" y1="60" x2="800" y2="60"/>
+    <line x1="0" y1="70" x2="800" y2="70"/>
+    <line x1="0" y1="80" x2="800" y2="80"/>
+    <line x1="0" y1="90" x2="800" y2="90"/>
+    <!-- ... More lines can be added if desired -->
+  </g>
+</svg>

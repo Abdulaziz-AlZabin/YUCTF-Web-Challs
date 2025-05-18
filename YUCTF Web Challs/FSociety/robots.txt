@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /FTheWholeWorld
+Disallow: /WhyDidYouFindMe/fsociety.svg
